@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Brief: 2026 Revaluation Video | Appeal Business Rates</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --brand-yellow: #FFD700;
+            --brand-black: #1A1A1A;
+            --brand-dark: #0D0D0D;
+            --brand-gray: #333333;
+            --brand-light: #F5F5F5;
+            --brand-white: #FFFFFF;
+            --accent-gold: #D4AF37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--brand-dark);
+            color: var(--brand-light);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        }
+
+        .nav-inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--brand-yellow);
+            letter-spacing: 0.05em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .nav-links a {
+            color: var(--brand-light);
+            text-decoration: none;
+            font-size: 0.75rem;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            background: var(--brand-yellow);
+            color: var(--brand-black);
+        }
+
+        /* Sections */
+        .section {
+            min-height: 100vh;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+        }
+
+        .section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand-black) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 70%, rgba(255, 215, 0, 0.05) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--brand-yellow);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border: 1px solid var(--brand-yellow);
+            border-radius: 2px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--brand-white);
+        }
+
+        .hero h1 span {
+            color: var(--brand-yellow);
+        }
+
+        .hero-meta {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .meta-item {
+            text-align: center;
+        }
+
+        .meta-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+        }
+
+        .meta-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--brand-white);
+        }
+
+        /* Section Headers */
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-number {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--brand-yellow);
+            letter-spacing: 0.15em;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+
+        .section-title {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 700;
+            color: var(--brand-white);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 600px;
+        }
+
+        /* Deliverables Grid */
+        .deliverables-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .deliverable-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .deliverable-card:hover {
+            border-color: var(--brand-yellow);
+            transform: translateY(-4px);
+        }
+
+        .deliverable-ratio {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid var(--brand-yellow);
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .deliverable-ratio.ratio-16-9 {
+            width: 100px;
+            height: 56px;
+        }
+
+        .deliverable-ratio.ratio-1-1 {
+            width: 70px;
+            height: 70px;
+        }
+
+        .deliverable-ratio.ratio-9-16 {
+            width: 45px;
+            height: 80px;
+        }
+
+        .deliverable-ratio span {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--brand-yellow);
+            font-weight: 700;
+        }
+
+        .deliverable-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--brand-white);
+        }
+
+        .deliverable-platform {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .video-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .video-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: var(--brand-black);
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-info {
+            padding: 1.25rem;
+        }
+
+        .video-label {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--brand-yellow);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-title {
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--brand-white);
+            margin-bottom: 0.25rem;
+        }
+
+        .video-desc {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* TikTok Embed */
+        .tiktok-section {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+
+        .tiktok-embed-wrapper {
+            flex: 0 0 350px;
+            max-width: 100%;
+        }
+
+        .tiktok-context {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .context-box {
+            background: rgba(255, 215, 0, 0.05);
+            border-left: 3px solid var(--brand-yellow);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .context-box h4 {
+            font-size: 0.9rem;
+            color: var(--brand-yellow);
+            margin-bottom: 0.75rem;
+            font-weight: 600;
+        }
+
+        .context-box p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+        }
+
+        .context-box ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .context-box li {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .context-box li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--brand-yellow);
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            background: var(--brand-black);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.03);
+        }
+
+        .gallery-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+            padding: 2rem 1.5rem 1.25rem;
+        }
+
+        .gallery-label span {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--brand-yellow);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* Script Section */
+        .script-timeline {
+            position: relative;
+            padding-left: 3rem;
+        }
+
+        .script-timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--brand-yellow), rgba(255, 215, 0, 0.2));
+        }
+
+        .script-scene {
+            position: relative;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+        }
+
+        .script-scene::before {
+            content: '';
+            position: absolute;
+            left: -3rem;
+            top: 2.5rem;
+            width: 12px;
+            height: 12px;
+            background: var(--brand-yellow);
+            border-radius: 50%;
+            transform: translateX(-5px);
+        }
+
+        .scene-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .scene-number {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--brand-black);
+            background: var(--brand-yellow);
+            padding: 0.35rem 0.75rem;
+            border-radius: 4px;
+            font-weight: 700;
+        }
+
+        .scene-time {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .scene-purpose {
+            font-size: 0.8rem;
+            color: var(--brand-yellow);
+            font-weight: 500;
+        }
+
+        .scene-script {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--brand-white);
+        }
+
+        .scene-script em {
+            color: var(--brand-yellow);
+            font-style: normal;
+            font-weight: 500;
+        }
+
+        /* Specs Grid */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .spec-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 1.75rem;
+        }
+
+        .spec-card h4 {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--brand-yellow);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .spec-item:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .spec-value {
+            font-size: 0.85rem;
+            color: var(--brand-white);
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: linear-gradient(135deg, var(--brand-yellow) 0%, var(--accent-gold) 100%);
+            text-align: center;
+            min-height: auto;
+            padding: 5rem 2rem;
+        }
+
+        .cta-section .section-inner {
+            max-width: 700px;
+        }
+
+        .cta-section h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--brand-black);
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: var(--brand-dark);
+            font-size: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .cta-checklist {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .cta-checklist span {
+            background: var(--brand-black);
+            color: var(--brand-yellow);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--brand-black);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer p {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .deliverables-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .tiktok-section {
+                flex-direction: column;
+            }
+
+            .tiktok-embed-wrapper {
+                flex: none;
+                width: 100%;
+            }
+
+            .script-timeline {
+                padding-left: 2rem;
+            }
+
+            .script-scene::before {
+                left: -2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-inner">
+            <div class="nav-brand">APPEAL BUSINESS RATES</div>
+            <div class="nav-links">
+                <a href="#overview">Overview</a>
+                <a href="#reference">Reference</a>
+                <a href="#competitor">Competitor</a>
+                <a href="#assets">Assets</a>
+                <a href="#script">Script</a>
+                <a href="#specs">Specs</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="section hero" id="overview">
+        <div class="hero-content">
+            <span class="hero-label">Content Brief</span>
+            <h1>2026 Revaluation<br><span>Deadline Video</span></h1>
+            <p style="max-width: 550px; margin: 0 auto; color: rgba(255,255,255,0.6); font-size: 1.1rem;">
+                Single video production for social media advertising. Urgency-focused messaging around the March 2025 challenge deadline.
+            </p>
+            <div class="hero-meta">
+                <div class="meta-item">
+                    <div class="meta-label">Creator</div>
+                    <div class="meta-value">Nikola</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Duration</div>
+                    <div class="meta-value">60 seconds</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Formats</div>
+                    <div class="meta-value">3 Aspect Ratios</div>
+                </div>
+                <div class="meta-item">
+                    <div class="meta-label">Date</div>
+                    <div class="meta-value">December 2025</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deliverables -->
+    <section class="section" style="background: var(--brand-black);">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-number">01 / DELIVERABLES</span>
+                <h2 class="section-title">Video Formats Required</h2>
+                <p class="section-subtitle">One video, three aspect ratios. Same content adapted for each platform's native format.</p>
+            </div>
+
+            <div class="deliverables-grid">
+                <div class="deliverable-card">
+                    <div class="deliverable-ratio ratio-16-9">
+                        <span>16:9</span>
+                    </div>
+                    <div class="deliverable-name">Landscape</div>
+                    <div class="deliverable-platform">YouTube, Website, LinkedIn</div>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-ratio ratio-1-1">
+                        <span>1:1</span>
+                    </div>
+                    <div class="deliverable-name">Square</div>
+                    <div class="deliverable-platform">Facebook Feed, Instagram Feed</div>
+                </div>
+                <div class="deliverable-card">
+                    <div class="deliverable-ratio ratio-9-16">
+                        <span>9:16</span>
+                    </div>
+                    <div class="deliverable-name">Vertical</div>
+                    <div class="deliverable-platform">TikTok, Reels, Stories</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Previous Videos Reference -->
+    <section class="section" id="reference">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-number">02 / REFERENCE</span>
+                <h2 class="section-title">Previous Videos Created</h2>
+                <p class="section-subtitle">Past work for Appeal Business Rates. Maintain visual consistency with these pieces.</p>
+            </div>
+
+            <div class="video-grid">
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=VIDEO-2025-04-22-21-56-36_b2xtjw&profile=cld-default"
+                            allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-label">Previous Work</div>
+                        <div class="video-title">Video 1: April 2025</div>
+                        <div class="video-desc">Reference for visual style and pacing</div>
+                    </div>
+                </div>
+
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=VIDEO-2025-04-15-20-14-11_gtt8zh&profile=cld-default"
+                            allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <div class="video-label">Previous Work</div>
+                        <div class="video-title">Video 2: April 2025</div>
+                        <div class="video-desc">Reference for brand treatment and motion</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competitor Reference -->
+    <section class="section" id="competitor" style="background: var(--brand-black);">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-number">03 / COMPETITOR ANALYSIS</span>
+                <h2 class="section-title">Competitor Content</h2>
+                <p class="section-subtitle">TikTok content from a competitor. Client shared for reference and differentiation.</p>
+            </div>
+
+            <div class="tiktok-section">
+                <div class="tiktok-embed-wrapper">
+                    <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@endthestruggletog3ther/video/7577402540677975318" data-video-id="7577402540677975318" style="max-width: 605px;min-width: 325px;">
+                        <section>
+                            <a target="_blank" title="@endthestruggletog3ther" href="https://www.tiktok.com/@endthestruggletog3ther?refer=embed">@endthestruggletog3ther</a> 
+                            The UK's auto budget is set to destroy local pubs and hospitality with massive rate hikes 
+                            <a title="endthestruggletogether" target="_blank" href="https://www.tiktok.com/tag/endthestruggletogether?refer=embed">#endthestruggletogether</a> 
+                            <a title="brokenbritain" target="_blank" href="https://www.tiktok.com/tag/brokenbritain?refer=embed">#brokenbritain</a> 
+                            <a title="budget" target="_blank" href="https://www.tiktok.com/tag/budget?refer=embed">#budget</a> 
+                            <a target="_blank" title="♬ Deep Thought - Mark Fabian" href="https://www.tiktok.com/music/Deep-Thought-7154055673033000961?refer=embed">♬ Deep Thought - Mark Fabian</a>
+                        </section>
+                    </blockquote>
+                    <script async src="https://www.tiktok.com/embed.js"></script>
+                </div>
+
+                <div class="tiktok-context">
+                    <div class="context-box">
+                        <h4>What They're Doing</h4>
+                        <p>Competitor is using emotionally charged, doom-focused messaging ("destroy local pubs", "broken Britain"). Political angle targeting hospitality sector specifically.</p>
+                    </div>
+
+                    <div class="context-box">
+                        <h4>How We Differentiate</h4>
+                        <ul>
+                            <li>Focus on actionable solutions, not just problems</li>
+                            <li>Professional, authoritative tone (not alarmist)</li>
+                            <li>Specific deadline urgency (March 2025)</li>
+                            <li>Clear CTA with tangible next step</li>
+                            <li>Broader appeal (all commercial property types)</li>
+                        </ul>
+                    </div>
+
+                    <div class="context-box">
+                        <h4>Key Takeaway</h4>
+                        <p>Our video should feel more trustworthy and solution-oriented. We're experts who can help, not just commentators adding to anxiety.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Winning Images -->
+    <section class="section" id="assets">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-number">04 / VISUAL ASSETS</span>
+                <h2 class="section-title">Past Winning Images</h2>
+                <p class="section-subtitle">High-performing creative assets. Use as reference for visual style and branding.</p>
+            </div>
+
+            <div class="image-gallery">
+                <div class="gallery-item">
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1765801426/PHOTO-2025-04-11-18-13-29_djo7lo.jpg" alt="Winning creative 1">
+                    <div class="gallery-label">
+                        <span>High Performer</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1765801426/PHOTO-2025-04-11-18-13-28_clc094.jpg" alt="Winning creative 2">
+                    <div class="gallery-label">
+                        <span>High Performer</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="context-box" style="margin-top: 2rem;">
+                <h4>Brand Elements to Maintain</h4>
+                <ul>
+                    <li>Yellow and black colour scheme</li>
+                    <li>Justice scales iconography where appropriate</li>
+                    <li>Bold, direct typography</li>
+                    <li>Clean, professional aesthetic</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Script Section -->
+    <section class="section" id="script" style="background: var(--brand-black);">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-number">05 / SCRIPT</span>
+                <h2 class="section-title">Video Script</h2>
+                <p class="section-subtitle">60-second script following AIDA framework. British voiceover with upbeat, professional music track.</p>
+            </div>
+
+            <div class="script-timeline">
+                <div class="script-scene">
+                    <div class="scene-header">
+                        <span class="scene-number">SCENE 1</span>
+                        <span class="scene-time">0-5 seconds</span>
+                        <span class="scene-purpose">Hook / Attention</span>
+                    </div>
+                    <div class="scene-script">
+                        Business rates are about to change again, and <em>most businesses don't even know it</em>.
+                        <br><br>
+                        The new 2026 Rateable Values are coming, and your chance to challenge your current valuation ends in <em>March 2025</em>.
+                    </div>
+                </div>
+
+                <div class="script-scene">
+                    <div class="scene-header">
+                        <span class="scene-number">SCENE 2</span>
+                        <span class="scene-time">5-20 seconds</span>
+                        <span class="scene-purpose">Problem / Interest</span>
+                    </div>
+                    <div class="scene-script">
+                        The Valuation Office is already preparing the next rating list.
+                        <br><br>
+                        But here's the catch:
+                        <br><br>
+                        If your current 2023-2026 Rateable Value is wrong, and you don't act by <em>March 2025</em>, you lose the legal right to challenge it.
+                        <br><br>
+                        After that, your RV becomes <em>locked</em>, even if it's massively inflated.
+                    </div>
+                </div>
+
+                <div class="script-scene">
+                    <div class="scene-header">
+                        <span class="scene-number">SCENE 3</span>
+                        <span class="scene-time">20-45 seconds</span>
+                        <span class="scene-purpose">Benefits / Desire</span>
+                    </div>
+                    <div class="scene-script">
+                        Right now, we're finding <em>10 to 30% overvaluations</em> across warehouses, gyms, shops, offices and hospitality units.
+                        <br><br>
+                        Fixing it now could:
+                        <br><br>
+                        <em>Cut thousands off your annual business rates</em>
+                        <br>
+                        <em>Reduce your liability before the 2026 list is set</em>
+                        <br>
+                        <em>Stop inflated figures from carrying into the next 3 years</em>
+                        <br>
+                        <em>And even trigger refunds</em>
+                    </div>
+                </div>
+
+                <div class="script-scene">
+                    <div class="scene-header">
+                        <span class="scene-number">SCENE 4</span>
+                        <span class="scene-time">45-60 seconds</span>
+                        <span class="scene-purpose">Call to Action</span>
+                    </div>
+                    <div class="scene-script">
+                        Want a free check on your Rateable Value?
+                        <br><br>
+                        <em>Click the link below.</em>
+                        <br><br>
+                        We'll tell you within 24 hours if you've been overvalued, and if there's a case to challenge before March 2025.
+                        <br><br>
+                        <em>Don't wait.</em> The 2026 valuation cycle won't.
+                        <br><br>
+                        Click below and get your free rates review today.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Production Specs -->
+    <section class="section" id="specs">
+        <div class="section-inner">
+            <div class="section-header">
+                <span class="section-number">06 / SPECIFICATIONS</span>
+                <h2 class="section-title">Production Specs</h2>
+                <p class="section-subtitle">Technical requirements and creative direction for the video.</p>
+            </div>
+
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h4>Video Formats</h4>
+                    <div class="spec-item">
+                        <span class="spec-label">Landscape</span>
+                        <span class="spec-value">1920 x 1080 (16:9)</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Square</span>
+                        <span class="spec-value">1080 x 1080 (1:1)</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Vertical</span>
+                        <span class="spec-value">1080 x 1920 (9:16)</span>
+                    </div>
+                </div>
+
+                <div class="spec-card">
+                    <h4>Audio</h4>
+                    <div class="spec-item">
+                        <span class="spec-label">Voiceover</span>
+                        <span class="spec-value">British accent</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Music</span>
+                        <span class="spec-value">Upbeat, professional</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Tone</span>
+                        <span class="spec-value">Authoritative, urgent</span>
+                    </div>
+                </div>
+
+                <div class="spec-card">
+                    <h4>Duration</h4>
+                    <div class="spec-item">
+                        <span class="spec-label">Total Length</span>
+                        <span class="spec-value">60 seconds</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Hook</span>
+                        <span class="spec-value">0-5s</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">CTA Start</span>
+                        <span class="spec-value">45s</span>
+                    </div>
+                </div>
+
+                <div class="spec-card">
+                    <h4>Brand Elements</h4>
+                    <div class="spec-item">
+                        <span class="spec-label">Primary Colour</span>
+                        <span class="spec-value">#FFD700 (Yellow)</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Secondary</span>
+                        <span class="spec-value">#1A1A1A (Black)</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Font</span>
+                        <span class="spec-value">Arial / Sans-serif</span>
+                    </div>
+                </div>
+
+                <div class="spec-card">
+                    <h4>Key Visuals</h4>
+                    <div class="spec-item">
+                        <span class="spec-label">Text on Screen</span>
+                        <span class="spec-value">Key phrases highlighted</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Motion Graphics</span>
+                        <span class="spec-value">Clean, professional</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Deadline Date</span>
+                        <span class="spec-value">March 2025 prominent</span>
+                    </div>
+                </div>
+
+                <div class="spec-card">
+                    <h4>Deliverables</h4>
+                    <div class="spec-item">
+                        <span class="spec-label">File Format</span>
+                        <span class="spec-value">MP4 (H.264)</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Resolution</span>
+                        <span class="spec-value">1080p minimum</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">Versions</span>
+                        <span class="spec-value">3 aspect ratios</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section cta-section">
+        <div class="section-inner">
+            <h2>Deliverables Checklist</h2>
+            <p>Confirm all items are completed before final delivery.</p>
+            <div class="cta-checklist">
+                <span>☐ 16:9 Landscape Video</span>
+                <span>☐ 1:1 Square Video</span>
+                <span>☐ 9:16 Vertical Video</span>
+                <span>☐ British Voiceover</span>
+                <span>☐ Music Track Licensed</span>
+                <span>☐ Captions/Subtitles</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Appeal Business Rates Ltd | Content Brief | December 2025</p>
+    </footer>
+
+</body>
+</html>
