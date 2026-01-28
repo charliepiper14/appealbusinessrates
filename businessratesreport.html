@@ -504,6 +504,25 @@
             fill: var(--success-green);
         }
         
+        .form-upgrade-info {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--medium-gray);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+        
+        .form-upgrade-info strong {
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+        
+        .form-upgrade-info .highlight {
+            color: var(--accent-gold);
+            font-weight: 600;
+        }
+        
         /* Benefits Section */
         .benefits {
             background: var(--light-gray);
@@ -674,6 +693,38 @@
             .benefit-text {
                 font-size: 0.9rem;
             }
+        }
+        
+        .benefits-note {
+            margin-top: 40px;
+            padding: 24px 32px;
+            background: var(--white);
+            border: 2px solid var(--primary-yellow);
+            border-radius: var(--border-radius-lg);
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+        }
+        
+        @media (max-width: 640px) {
+            .benefits-note {
+                padding: 20px 24px;
+                margin-top: 32px;
+            }
+        }
+        
+        .benefits-note-text {
+            font-size: 1rem;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        
+        .benefits-note-text strong {
+            color: var(--primary-black);
+        }
+        
+        .benefits-note-text .highlight {
+            color: var(--accent-gold);
+            font-weight: 600;
         }
         
         /* Common Issues Section */
@@ -1470,6 +1521,10 @@
                                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
                                 Secure payment • Instant confirmation
                             </div>
+                            
+                            <div class="form-upgrade-info">
+                                <strong>Proceed to full service?</strong> Your £99 is <span class="highlight">deducted from our fees</span>. Standard fees: 5% of RV (or 2.5% if RV exceeds £100k) + up to 25% success fee on one year's savings only.
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -1546,6 +1601,12 @@
                         <p class="benefit-text">Clear action plan whether you choose DIY appeal or our full-service option.</p>
                     </div>
                 </div>
+            </div>
+            
+            <div class="benefits-note reveal">
+                <p class="benefits-note-text">
+                    <strong>Decide to proceed with a full appeal?</strong> Your £99 report fee is <span class="highlight">deducted from our standard fees</span> when you instruct us for a site inspection.
+                </p>
             </div>
         </div>
     </section>
