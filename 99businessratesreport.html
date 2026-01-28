@@ -1,0 +1,1782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>£99 Business Rates Report | Appeal Business Rates Ltd</title>
+    <meta name="description" content="Get a professional review of your business rates. Find out if your Rateable Value is too high with our £99 feasibility report. 95% success rate.">
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Brand Colors */
+            --primary-yellow: #FFD100;
+            --primary-yellow-hover: #E6BC00;
+            --primary-black: #1A1A1A;
+            --dark-charcoal: #2D2D2D;
+            --light-gray: #F7F7F5;
+            --medium-gray: #E8E8E6;
+            --text-dark: #1A1A1A;
+            --text-muted: #6B6B6B;
+            --white: #FFFFFF;
+            --success-green: #22C55E;
+            --accent-gold: #B8860B;
+            
+            /* Typography - Helvetica stack for high conversion */
+            --font-display: 'Playfair Display', Georgia, serif;
+            --font-body: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            
+            /* Spacing */
+            --section-padding: clamp(60px, 10vw, 120px);
+            --container-max: 1200px;
+            --container-padding: clamp(20px, 5vw, 40px);
+            
+            /* Effects */
+            --shadow-soft: 0 4px 20px rgba(0,0,0,0.08);
+            --shadow-medium: 0 8px 40px rgba(0,0,0,0.12);
+            --shadow-heavy: 0 20px 60px rgba(0,0,0,0.15);
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+            
+            /* Transitions */
+            --transition-fast: 0.2s ease;
+            --transition-medium: 0.3s ease;
+        }
+        
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            font-size: 16px;
+            line-height: 1.65;
+            color: var(--text-dark);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            letter-spacing: -0.01em;
+        }
+        
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        .section-padding {
+            padding: var(--section-padding) 0;
+        }
+        
+        /* Header / Navigation */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--white);
+            border-bottom: 1px solid var(--medium-gray);
+            transition: var(--transition-medium);
+        }
+        
+        .header.scrolled {
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
+        }
+        
+        @media (max-width: 480px) {
+            .logo-img {
+                height: 40px;
+            }
+        }
+        
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .header-phone {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.01em;
+        }
+        
+        .header-phone svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary-yellow);
+        }
+        
+        .header-phone:hover {
+            color: var(--accent-gold);
+        }
+        
+        @media (max-width: 640px) {
+            .header-phone span {
+                display: none;
+            }
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            margin-top: 72px;
+            overflow: hidden;
+        }
+        
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(26, 26, 26, 0.92) 0%,
+                rgba(26, 26, 26, 0.85) 40%,
+                rgba(26, 26, 26, 0.7) 100%
+            );
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding: 60px 0;
+        }
+        
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .hero {
+                min-height: auto;
+                padding: 40px 0;
+            }
+        }
+        
+        .hero-text {
+            color: var(--white);
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 209, 0, 0.15);
+            border: 1px solid var(--primary-yellow);
+            color: var(--primary-yellow);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease both;
+        }
+        
+        .hero-badge svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+        
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.6s ease 0.1s both;
+        }
+        
+        .hero-title .highlight {
+            color: var(--primary-yellow);
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 32px;
+            max-width: 540px;
+            animation: fadeInUp 0.6s ease 0.2s both;
+        }
+        
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.6s ease 0.3s both;
+        }
+        
+        .stat-item {
+            text-align: left;
+        }
+        
+        .stat-value {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-yellow);
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            margin-top: 4px;
+        }
+        
+        /* Form Card */
+        .form-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: 32px;
+            box-shadow: var(--shadow-heavy);
+            animation: fadeInUp 0.6s ease 0.2s both;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .form-price {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 4px;
+            margin-bottom: 8px;
+        }
+        
+        .form-price .currency {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .form-price .amount {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+        
+        .form-price-label {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .form-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+            letter-spacing: -0.01em;
+        }
+        
+        .form-group {
+            margin-bottom: 16px;
+        }
+        
+        .form-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--text-dark);
+            margin-bottom: 6px;
+            letter-spacing: 0.01em;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            border: 2px solid var(--medium-gray);
+            border-radius: var(--border-radius);
+            background: var(--white);
+            color: var(--text-dark);
+            transition: var(--transition-fast);
+        }
+        
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary-yellow);
+            box-shadow: 0 0 0 4px rgba(255, 209, 0, 0.15);
+        }
+        
+        .form-input::placeholder {
+            color: var(--text-muted);
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        
+        @media (max-width: 480px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 32px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+            text-decoration: none;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition-medium);
+        }
+        
+        .btn-primary {
+            width: 100%;
+            background: var(--primary-yellow);
+            color: var(--primary-black);
+        }
+        
+        .btn-primary:hover {
+            background: var(--primary-yellow-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(255, 209, 0, 0.4);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+        
+        .btn-primary svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+        
+        .form-trust {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 16px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        .form-trust svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--success-green);
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            background: var(--light-gray);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 48px;
+        }
+        
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 16px;
+        }
+        
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        
+        @media (max-width: 900px) {
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .benefit-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: 32px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition-medium);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-medium);
+        }
+        
+        .benefit-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, var(--primary-yellow), var(--primary-yellow-hover));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .benefit-icon svg {
+            width: 28px;
+            height: 28px;
+            fill: var(--primary-black);
+        }
+        
+        .benefit-title {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+        
+        .benefit-text {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        
+        /* Common Issues Section */
+        .issues {
+            background: var(--primary-black);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .issues::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 209, 0, 0.03));
+            pointer-events: none;
+        }
+        
+        .issues .section-title {
+            color: var(--white);
+        }
+        
+        .issues .section-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .issues-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .issues-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .issue-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--border-radius);
+            transition: var(--transition-medium);
+        }
+        
+        .issue-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--primary-yellow);
+        }
+        
+        .issue-icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-yellow);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .issue-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--primary-black);
+        }
+        
+        .issue-content h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 4px;
+            letter-spacing: -0.01em;
+        }
+        
+        .issue-content p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.5;
+        }
+        
+        /* Process Section */
+        .process {
+            background: var(--white);
+        }
+        
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            position: relative;
+        }
+        
+        .process-grid::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: calc(16.67% + 20px);
+            right: calc(16.67% + 20px);
+            height: 3px;
+            background: var(--medium-gray);
+            z-index: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .process-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .process-grid::before {
+                display: none;
+            }
+        }
+        
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .process-number {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-black);
+            margin: 0 auto 20px;
+            box-shadow: 0 4px 20px rgba(255, 209, 0, 0.3);
+        }
+        
+        .process-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+            letter-spacing: -0.01em;
+        }
+        
+        .process-text {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            max-width: 280px;
+            margin: 0 auto;
+        }
+        
+        /* Social Proof */
+        .social-proof {
+            background: var(--light-gray);
+        }
+        
+        .trust-badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+            margin-bottom: 48px;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 24px;
+            background: var(--white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-soft);
+        }
+        
+        .trust-badge-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-yellow);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .trust-badge-icon svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--primary-black);
+        }
+        
+        .trust-badge-text {
+            text-align: left;
+        }
+        
+        .trust-badge-value {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1;
+        }
+        
+        .trust-badge-label {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        
+        /* Testimonial */
+        .testimonial-card {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 48px;
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-medium);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 40px;
+            font-family: var(--font-display);
+            font-size: 6rem;
+            color: var(--primary-yellow);
+            opacity: 0.3;
+            line-height: 1;
+        }
+        
+        .testimonial-text {
+            font-size: 1.25rem;
+            color: var(--text-dark);
+            line-height: 1.7;
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-dark);
+            letter-spacing: -0.01em;
+        }
+        
+        .testimonial-role {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+        
+        .testimonial-stars {
+            display: flex;
+            justify-content: center;
+            gap: 4px;
+            margin-bottom: 16px;
+        }
+        
+        .testimonial-stars svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--primary-yellow);
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, var(--primary-black) 0%, var(--dark-charcoal) 100%);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .cta .section-title {
+            color: var(--white);
+        }
+        
+        .cta-subtitle {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+        
+        .cta-price {
+            display: inline-flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        
+        .cta-price .amount {
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 700;
+            color: var(--primary-yellow);
+        }
+        
+        .cta-price .label {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .cta .btn-primary {
+            width: auto;
+            padding: 18px 48px;
+            font-size: 1.1rem;
+        }
+        
+        .cta-guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .cta-guarantee svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--success-green);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            background: var(--white);
+        }
+        
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            border-bottom: 1px solid var(--medium-gray);
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 24px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: var(--font-body);
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            color: var(--text-dark);
+            transition: var(--transition-fast);
+        }
+        
+        .faq-question:hover {
+            color: var(--accent-gold);
+        }
+        
+        .faq-icon {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: var(--light-gray);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-medium);
+        }
+        
+        .faq-icon svg {
+            width: 16px;
+            height: 16px;
+            fill: var(--text-dark);
+            transition: var(--transition-medium);
+        }
+        
+        .faq-item.active .faq-icon {
+            background: var(--primary-yellow);
+        }
+        
+        .faq-item.active .faq-icon svg {
+            transform: rotate(45deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+        
+        .faq-answer-inner {
+            padding-bottom: 24px;
+            font-size: 1rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary-black);
+            color: var(--white);
+            padding: 48px 0;
+        }
+        
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 24px;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .footer-logo-img {
+            height: 44px;
+            width: auto;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+        }
+        
+        .footer-contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+        
+        .footer-contact a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-fast);
+        }
+        
+        .footer-contact a:hover {
+            color: var(--primary-yellow);
+        }
+        
+        .footer-contact svg {
+            width: 18px;
+            height: 18px;
+            fill: var(--primary-yellow);
+        }
+        
+        .footer-legal {
+            width: 100%;
+            text-align: center;
+            padding-top: 24px;
+            margin-top: 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Scroll animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Loading state for form */
+        .btn-primary.loading {
+            position: relative;
+            color: transparent;
+            pointer-events: none;
+        }
+        
+        .btn-primary.loading::after {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            border: 3px solid var(--primary-black);
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        /* Form validation styles */
+        .form-input.error {
+            border-color: #DC2626;
+        }
+        
+        .form-error {
+            font-size: 0.8rem;
+            color: #DC2626;
+            margin-top: 4px;
+            display: none;
+        }
+        
+        .form-input.error + .form-error {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="/" class="logo">
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1752904723/ABR_logo_wjj9rn.png" alt="Appeal Business Rates Ltd" class="logo-img">
+                </a>
+                <div class="header-cta">
+                    <a href="tel:03335674030" class="header-phone">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        <span>0333 567 4030</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1769604190/interior-of-a-modern-warehouse-2026-01-08-23-01-15-utc_1_pyfuib.jpg" alt="Modern warehouse interior" loading="eager">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-text">
+                        <div class="hero-badge">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            2026 Revaluation Deadline Approaching
+                        </div>
+                        <h1 class="hero-title">
+                            Are Your <span class="highlight">Business Rates</span> Too High?
+                        </h1>
+                        <p class="hero-subtitle">
+                            73% of UK businesses overpay their rates. Get a professional review of your Rateable Value and find out if you have grounds to appeal — before the deadline passes.
+                        </p>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <div class="stat-value">95%</div>
+                                <div class="stat-label">Success Rate</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">£8,500</div>
+                                <div class="stat-label">Average Savings</div>
+                            </div>
+                            <div class="stat-item">
+                                <div class="stat-value">2,400+</div>
+                                <div class="stat-label">Appeals Filed</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Lead Capture Form -->
+                    <div class="form-card" id="report-form-card">
+                        <div class="form-header">
+                            <div class="form-price">
+                                <span class="currency">£</span>
+                                <span class="amount">99</span>
+                            </div>
+                            <p class="form-price-label">One-time fee • No hidden costs</p>
+                            <h2 class="form-title">Professional Feasibility Report</h2>
+                        </div>
+                        
+                        <form id="report-form" novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="firstName">First Name *</label>
+                                    <input type="text" id="firstName" name="firstName" class="form-input" placeholder="John" required>
+                                    <span class="form-error">Please enter your first name</span>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="lastName">Last Name *</label>
+                                    <input type="text" id="lastName" name="lastName" class="form-input" placeholder="Smith" required>
+                                    <span class="form-error">Please enter your last name</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-input" placeholder="john@company.co.uk" required>
+                                <span class="form-error">Please enter a valid email</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="07700 900123" required>
+                                <span class="form-error">Please enter your phone number</span>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="propertyAddress">Property Address *</label>
+                                <input type="text" id="propertyAddress" name="propertyAddress" class="form-input" placeholder="123 Industrial Estate, Manchester" required>
+                                <span class="form-error">Please enter the property address</span>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label class="form-label" for="rateableValue">Rateable Value (if known)</label>
+                                    <input type="text" id="rateableValue" name="rateableValue" class="form-input" placeholder="e.g. £45,000">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label" for="propertyType">Property Type</label>
+                                    <select id="propertyType" name="propertyType" class="form-input">
+                                        <option value="">Select type...</option>
+                                        <option value="warehouse">Warehouse</option>
+                                        <option value="industrial">Industrial Unit</option>
+                                        <option value="trade_counter">Trade Counter</option>
+                                        <option value="retail">Retail</option>
+                                        <option value="office">Office</option>
+                                        <option value="hospitality">Hospitality</option>
+                                        <option value="healthcare">Healthcare</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary" id="submit-btn">
+                                Get My £99 Report
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                            </button>
+                            
+                            <div class="form-trust">
+                                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                                Secure payment • Instant confirmation
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">What You'll Receive</span>
+                <h2 class="section-title">Your £99 Feasibility Report Includes</h2>
+                <p class="section-subtitle">A comprehensive professional assessment of your business rates position</p>
+            </div>
+            
+            <div class="benefits-grid">
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                    </div>
+                    <h3 class="benefit-title">VOA Valuation Review</h3>
+                    <p class="benefit-text">Complete analysis of your current Rateable Value against VOA records and methodology.</p>
+                </div>
+                
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/></svg>
+                    </div>
+                    <h3 class="benefit-title">Comparable Evidence</h3>
+                    <p class="benefit-text">Research into similar properties in your area to identify if you're paying more than you should.</p>
+                </div>
+                
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                    </div>
+                    <h3 class="benefit-title">Error Identification</h3>
+                    <p class="benefit-text">Check for common mistakes: floor area errors, mezzanine charges, wrong use class, and more.</p>
+                </div>
+                
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </div>
+                    <h3 class="benefit-title">Appeal Assessment</h3>
+                    <p class="benefit-text">Clear recommendation on whether you have grounds for a successful appeal.</p>
+                </div>
+                
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                    </div>
+                    <h3 class="benefit-title">Evidence Pack Outline</h3>
+                    <p class="benefit-text">Documentation needed if you decide to proceed with a formal challenge.</p>
+                </div>
+                
+                <div class="benefit-card reveal">
+                    <div class="benefit-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <h3 class="benefit-title">Next Steps Guidance</h3>
+                    <p class="benefit-text">Clear action plan whether you choose DIY appeal or our full-service option.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Common Issues Section -->
+    <section class="issues section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Why Rates Are Wrong</span>
+                <h2 class="section-title">Common Reasons Properties Are Overvalued</h2>
+                <p class="section-subtitle">These issues affect thousands of UK businesses — and most don't even know it</p>
+            </div>
+            
+            <div class="issues-grid">
+                <div class="issue-item reveal">
+                    <div class="issue-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm0 10H3V8h18v8zM9 10H7v4h2v-4zm8 0h-6v4h6v-4z"/></svg>
+                    </div>
+                    <div class="issue-content">
+                        <h4>Incorrect Floor Area</h4>
+                        <p>VOA measurements may include areas that don't exist or have been changed.</p>
+                    </div>
+                </div>
+                
+                <div class="issue-item reveal">
+                    <div class="issue-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 6h12v3H6zm0 5h12v3H6zm0 5h12v3H6z"/></svg>
+                    </div>
+                    <div class="issue-content">
+                        <h4>Mezzanine Still Included</h4>
+                        <p>Removed mezzanines often remain on valuation records.</p>
+                    </div>
+                </div>
+                
+                <div class="issue-item reveal">
+                    <div class="issue-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg>
+                    </div>
+                    <div class="issue-content">
+                        <h4>Wrong Property Class</h4>
+                        <p>Office rates applied to warehouse space, or retail rates on trade counters.</p>
+                    </div>
+                </div>
+                
+                <div class="issue-item reveal">
+                    <div class="issue-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zM7 11h2v2H7zm4 0h2v2h-2zm4 0h2v2h-2z"/></svg>
+                    </div>
+                    <div class="issue-content">
+                        <h4>Split Units Not Updated</h4>
+                        <p>Subdivided or amalgamated units with outdated valuations.</p>
+                    </div>
+                </div>
+                
+                <div class="issue-item reveal">
+                    <div class="issue-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11h-4v4h-4v-4H6v-4h4V6h4v4h4v4z"/></svg>
+                    </div>
+                    <div class="issue-content">
+                        <h4>Poor Condition Not Reflected</h4>
+                        <p>Building defects, limited access, or environmental factors not considered.</p>
+                    </div>
+                </div>
+                
+                <div class="issue-item reveal">
+                    <div class="issue-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3.5 18.49l6-6.01 4 4L22 6.92l-1.41-1.41-7.09 7.97-4-4L2 16.99z"/></svg>
+                    </div>
+                    <div class="issue-content">
+                        <h4>Comparables Paying Less</h4>
+                        <p>Similar properties in your area with lower rates per square metre.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Simple Process</span>
+                <h2 class="section-title">How It Works</h2>
+                <p class="section-subtitle">Three straightforward steps to potentially reduce your business rates</p>
+            </div>
+            
+            <div class="process-grid">
+                <div class="process-step reveal">
+                    <div class="process-number">1</div>
+                    <h3 class="process-title">Submit Your Details</h3>
+                    <p class="process-text">Complete the form above with your property address and current rates information.</p>
+                </div>
+                
+                <div class="process-step reveal">
+                    <div class="process-number">2</div>
+                    <h3 class="process-title">We Analyse & Report</h3>
+                    <p class="process-text">Our specialists review VOA data, comparable evidence, and identify any grounds for appeal.</p>
+                </div>
+                
+                <div class="process-step reveal">
+                    <div class="process-number">3</div>
+                    <h3 class="process-title">Choose Your Path</h3>
+                    <p class="process-text">Use the report for a DIY appeal, or let us handle the full Check-Challenge-Appeal process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof section-padding">
+        <div class="container">
+            <div class="trust-badges reveal">
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <div class="trust-badge-text">
+                        <div class="trust-badge-value">95%</div>
+                        <div class="trust-badge-label">Success Rate</div>
+                    </div>
+                </div>
+                
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/></svg>
+                    </div>
+                    <div class="trust-badge-text">
+                        <div class="trust-badge-value">£8,500</div>
+                        <div class="trust-badge-label">Average Savings</div>
+                    </div>
+                </div>
+                
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
+                    <div class="trust-badge-text">
+                        <div class="trust-badge-value">2,400+</div>
+                        <div class="trust-badge-label">Appeals Filed</div>
+                    </div>
+                </div>
+                
+                <div class="trust-badge">
+                    <div class="trust-badge-icon">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                    </div>
+                    <div class="trust-badge-text">
+                        <div class="trust-badge-value">UK Wide</div>
+                        <div class="trust-badge-label">Coverage</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card reveal">
+                <div class="testimonial-stars">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="testimonial-text">"The report identified that our warehouse floor area was overstated by 15%. After the successful appeal, we're saving over £4,200 per year. Wish we'd done this years ago."</p>
+                <p class="testimonial-author">James Mitchell</p>
+                <p class="testimonial-role">Operations Director, Midlands Distribution Co.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq section-padding">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Questions Answered</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-grid">
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        What exactly is included in the £99 report?
+                        <span class="faq-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Your report includes a full review of your VOA valuation, comparable evidence research, identification of any errors or grounds for appeal, an assessment of likely success, and a clear action plan. You'll know exactly where you stand and what options are available.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        How long does the report take?
+                        <span class="faq-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Most reports are completed within 3-5 working days. Complex cases with multiple properties may take a little longer. We'll keep you informed throughout the process.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        What if the report shows I can't appeal?
+                        <span class="faq-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            The report is yours to keep regardless of the outcome. If we find no grounds for appeal, at least you'll have peace of mind and confirmation that your rates are fair. Many businesses find value simply in knowing their position.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        Are you connected to the council or VOA?
+                        <span class="faq-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            No. We are completely independent specialists. We work exclusively on behalf of businesses like yours — never for councils or the Valuation Office Agency. Our only interest is reducing your rates.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        What happens if I want to proceed with a full appeal?
+                        <span class="faq-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            If your report shows strong grounds for appeal, we can handle the entire Check-Challenge-Appeal process on your behalf. Our full service operates on a "no saving, no fee" basis — you only pay a success fee if we actually reduce your rates.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="faq-item reveal">
+                    <button class="faq-question">
+                        Why is the 2026 revaluation deadline important?
+                        <span class="faq-icon">
+                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                        </span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            The 2026 revaluation will reset all rateable values across England and Wales. Acting now means you can potentially recover overpayments and reduce your rates before the new list takes effect. Challenges submitted after certain deadlines may not be backdated.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="cta section-padding">
+        <div class="container">
+            <div class="reveal">
+                <h2 class="section-title">Ready to Check Your Business Rates?</h2>
+                <p class="cta-subtitle">Join thousands of UK businesses who've reduced their rates. Get your professional feasibility report today.</p>
+                <div class="cta-price">
+                    <span class="amount">£99</span>
+                    <span class="label">one-time fee</span>
+                </div>
+                <a href="#report-form-card" class="btn btn-primary">
+                    Get My £99 Report
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                </a>
+                <div class="cta-guarantee">
+                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+                    95% success rate • Independent specialists • No hidden costs
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <div class="footer-logo">
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1752904723/ABR_logo_wjj9rn.png" alt="Appeal Business Rates Ltd" class="footer-logo-img">
+                </div>
+                
+                <div class="footer-contact">
+                    <a href="tel:03335674030">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        0333 567 4030
+                    </a>
+                    <a href="mailto:info@appealbusinessrates.co.uk">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        info@appealbusinessrates.co.uk
+                    </a>
+                    <a href="https://www.appealbusinessrates.co.uk" target="_blank">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                        www.appealbusinessrates.co.uk
+                    </a>
+                </div>
+            </div>
+            
+            <div class="footer-legal">
+                © 2025 Appeal Business Rates Ltd. All rights reserved. | Independent business rates specialists — we are not connected to any council or the VOA.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Webhook URL - REPLACE THIS with your actual webhook endpoint
+        const WEBHOOK_URL = 'YOUR_WEBHOOK_URL_HERE';
+        
+        // Stripe payment URL
+        const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/6oUbJ14mi5A7eB13dTb7y00';
+        
+        // Header scroll effect
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+        
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+            
+            lastScroll = currentScroll;
+        });
+        
+        // Scroll reveal animations
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const revealPoint = 100;
+                
+                if (elementTop < windowHeight - revealPoint) {
+                    element.classList.add('visible');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+        
+        // FAQ Accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        
+        faqItems.forEach(item => {
+            const question = item.querySelector('.faq-question');
+            
+            question.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                faqItems.forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+                
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+        
+        // Form validation and submission
+        const form = document.getElementById('report-form');
+        const submitBtn = document.getElementById('submit-btn');
+        
+        const validateEmail = (email) => {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        };
+        
+        const validatePhone = (phone) => {
+            const cleaned = phone.replace(/\s+/g, '');
+            return cleaned.length >= 10;
+        };
+        
+        const showError = (input) => {
+            input.classList.add('error');
+        };
+        
+        const clearError = (input) => {
+            input.classList.remove('error');
+        };
+        
+        // Real-time validation
+        form.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('blur', () => {
+                if (input.hasAttribute('required') && !input.value.trim()) {
+                    showError(input);
+                } else if (input.type === 'email' && input.value && !validateEmail(input.value)) {
+                    showError(input);
+                } else if (input.type === 'tel' && input.value && !validatePhone(input.value)) {
+                    showError(input);
+                } else {
+                    clearError(input);
+                }
+            });
+            
+            input.addEventListener('input', () => {
+                clearError(input);
+            });
+        });
+        
+        // Form submission
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Validate all required fields
+            let isValid = true;
+            const requiredFields = form.querySelectorAll('[required]');
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    showError(field);
+                    isValid = false;
+                }
+            });
+            
+            const emailField = form.querySelector('#email');
+            if (emailField.value && !validateEmail(emailField.value)) {
+                showError(emailField);
+                isValid = false;
+            }
+            
+            const phoneField = form.querySelector('#phone');
+            if (phoneField.value && !validatePhone(phoneField.value)) {
+                showError(phoneField);
+                isValid = false;
+            }
+            
+            if (!isValid) {
+                // Scroll to first error
+                const firstError = form.querySelector('.error');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstError.focus();
+                }
+                return;
+            }
+            
+            // Collect form data
+            const formData = {
+                firstName: form.querySelector('#firstName').value.trim(),
+                lastName: form.querySelector('#lastName').value.trim(),
+                email: form.querySelector('#email').value.trim(),
+                phone: form.querySelector('#phone').value.trim(),
+                propertyAddress: form.querySelector('#propertyAddress').value.trim(),
+                rateableValue: form.querySelector('#rateableValue').value.trim(),
+                propertyType: form.querySelector('#propertyType').value,
+                submittedAt: new Date().toISOString(),
+                source: '99-report-landing-page'
+            };
+            
+            // Show loading state
+            submitBtn.classList.add('loading');
+            submitBtn.disabled = true;
+            
+            try {
+                // Send to webhook
+                const response = await fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                // Store form data in sessionStorage for potential use on payment page
+                sessionStorage.setItem('reportFormData', JSON.stringify(formData));
+                
+                // Redirect to Stripe checkout
+                window.location.href = STRIPE_CHECKOUT_URL;
+                
+            } catch (error) {
+                console.error('Webhook error:', error);
+                
+                // Even if webhook fails, redirect to payment (data is in sessionStorage)
+                // You may want to handle this differently in production
+                sessionStorage.setItem('reportFormData', JSON.stringify(formData));
+                window.location.href = STRIPE_CHECKOUT_URL;
+            }
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight - 20;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
