@@ -2082,13 +2082,18 @@
             submitBtn.disabled = true;
             
             try {
-                // Send to webhook
+                // Send to webhook using form-urlencoded format for Zapier field mapping
+                const urlEncodedData = new URLSearchParams();
+                for (const [key, value] of Object.entries(formData)) {
+                    urlEncodedData.append(key, value);
+                }
+                
                 const response = await fetch(WEBHOOK_URL, {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
+                        'Content-Type': 'application/x-www-form-urlencoded',
                     },
-                    body: JSON.stringify(formData)
+                    body: urlEncodedData.toString()
                 });
                 
                 // Store form data in sessionStorage for potential use on payment page
