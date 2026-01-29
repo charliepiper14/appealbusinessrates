@@ -1512,6 +1512,13 @@
                                 </div>
                             </div>
                             
+                            <!-- Hidden UTM fields -->
+                            <input type="hidden" id="utm_campaign" name="utm_campaign" value="">
+                            <input type="hidden" id="utm_medium" name="utm_medium" value="">
+                            <input type="hidden" id="utm_source" name="utm_source" value="">
+                            <input type="hidden" id="utm_term" name="utm_term" value="">
+                            <input type="hidden" id="utm_content" name="utm_content" value="">
+                            
                             <button type="submit" class="btn btn-primary" id="submit-btn">
                                 Get My £99 Report
                                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
@@ -1930,6 +1937,31 @@
         // Stripe payment URL
         const STRIPE_CHECKOUT_URL = 'https://buy.stripe.com/6oUbJ14mi5A7eB13dTb7y00';
         
+        // Capture UTM parameters from URL
+        function getUTMParameters() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return {
+                utm_campaign: urlParams.get('utm_campaign') || '',
+                utm_medium: urlParams.get('utm_medium') || '',
+                utm_source: urlParams.get('utm_source') || '',
+                utm_term: urlParams.get('utm_term') || '',
+                utm_content: urlParams.get('utm_content') || ''
+            };
+        }
+        
+        // Populate hidden UTM fields on page load
+        function populateUTMFields() {
+            const utmParams = getUTMParameters();
+            document.getElementById('utm_campaign').value = utmParams.utm_campaign;
+            document.getElementById('utm_medium').value = utmParams.utm_medium;
+            document.getElementById('utm_source').value = utmParams.utm_source;
+            document.getElementById('utm_term').value = utmParams.utm_term;
+            document.getElementById('utm_content').value = utmParams.utm_content;
+        }
+        
+        // Run on page load
+        document.addEventListener('DOMContentLoaded', populateUTMFields);
+        
         // Header scroll effect
         const header = document.getElementById('header');
         let lastScroll = 0;
@@ -2073,6 +2105,11 @@
                 propertyAddress: form.querySelector('#propertyAddress').value.trim(),
                 rateableValue: form.querySelector('#rateableValue').value.trim(),
                 propertyType: form.querySelector('#propertyType').value,
+                utm_campaign: form.querySelector('#utm_campaign').value,
+                utm_medium: form.querySelector('#utm_medium').value,
+                utm_source: form.querySelector('#utm_source').value,
+                utm_term: form.querySelector('#utm_term').value,
+                utm_content: form.querySelector('#utm_content').value,
                 submittedAt: new Date().toISOString(),
                 source: '99-report-landing-page'
             };
